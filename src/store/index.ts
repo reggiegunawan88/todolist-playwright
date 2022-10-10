@@ -27,7 +27,7 @@ const reducer = (
 export const makeStore = () =>
   configureStore({
     reducer,
-  });
+  } as any);
 
 type Store = ReturnType<typeof makeStore>;
 

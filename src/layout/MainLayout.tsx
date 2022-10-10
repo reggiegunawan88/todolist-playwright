@@ -3,11 +3,11 @@ import { ReactNode } from 'react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
-type IMainProps = {
+type IMainLayoutProps = {
   children: ReactNode;
 };
 
-const Main = (props: IMainProps) => (
+const MainLayout = (props: IMainLayoutProps) => (
   <div className="px-1 w-full antialiased text-gray-700">
     <div className="mx-auto max-w-screen-md">
       <Header />
@@ -17,4 +17,4 @@ const Main = (props: IMainProps) => (
   </div>
 );
 
-export { Main };
+export default MainLayout;
