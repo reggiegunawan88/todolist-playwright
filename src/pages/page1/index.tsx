@@ -1,5 +1,5 @@
 
-import MainLayout from '@/layout/MainLayout';
+import MainLayout from '@/layouts/MainLayout';
 import FirstParagraph from './components/FirstParagraph';
 import SecondParagraph from './components/SecondParagraph/index.';
 

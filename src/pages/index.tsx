@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import { useRouter } from 'next/router';
 
-import MainLayout from '@/layout/MainLayout';
+import MainLayout from '@/layouts/MainLayout';
 
 const Index = () => {
   const router = useRouter();
