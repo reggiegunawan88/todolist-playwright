@@ -2,11 +2,11 @@
 import { combineReducers } from 'redux';
 
 /* import slicers for each features */
-import HomeSlicers from '@/store/slices/Home';
+import TaskIndicatorSlice from '@/store/slices/TaskIndicator';
 
 // combine all reducers
 const combinedReducer = combineReducers({
-  home: HomeSlicers,
+  taskIndicator: TaskIndicatorSlice,
 });
 
 export default combinedReducer;
