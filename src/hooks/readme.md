@@ -1,1 +1,1 @@
-Custom hooks for each component/business logic
+Custom hooks for business logic that might be used in multiple places

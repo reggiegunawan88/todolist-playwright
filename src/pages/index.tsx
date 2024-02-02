@@ -1,20 +1,17 @@
 import { ReactNode } from 'react';
 
 import MainLayout from '@/layouts/MainLayout';
-import IndicatorSection from '@/components/IndicatorSection';
-import CTASection from '@/components/CTASection';
-import ToDoList from '@/components/ToDoList';
+import Home from './Home';
+import dynamic from 'next/dynamic';
+
+const Snackbar = dynamic(() => import('@/components/Snackbar'));
 
 const Index = () => {
   return (
-    <div className="flex flex-col gap-y-5">
-      <span className="text-2xl font-bold">Task Management App</span>
-      <div className="flex flex-col gap-y-20">
-        <IndicatorSection />
-        <CTASection />
-        <ToDoList />
-      </div>
-    </div>
+    <>
+      <Home />
+      <Snackbar />
+    </>
   );
 };
 
