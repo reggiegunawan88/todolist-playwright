@@ -1,0 +1,7 @@
+.input-style {
+  @apply border-2 border-gray-400 rounded-md py-1 px-2 focus:border-purple-500 focus:outline-none;
+}
+
+.table-td-style {
+  @apply border px-8 py-2;
+}
