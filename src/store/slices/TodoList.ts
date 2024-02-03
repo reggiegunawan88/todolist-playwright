@@ -18,7 +18,6 @@ export const TodoListSlice = createSlice({
     },
     deleteTodoItem: (state, targetIndex: PayloadAction<number>) => {
       const itemIdx = state.findIndex(item => item.id === targetIndex.payload)
-      console.log(itemIdx)
       if(itemIdx !== -1){
         state = state.splice(itemIdx, 1)
       }

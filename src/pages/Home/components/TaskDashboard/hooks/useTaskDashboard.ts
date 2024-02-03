@@ -34,7 +34,9 @@ const useTaskIndicators = () => {
   }
 
   useEffect(() => {
-    calculateAll()
+    if(todoList){
+      calculateAll()
+    }
   }, [todoList]);
 
   return {

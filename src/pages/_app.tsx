@@ -4,8 +4,9 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '@/styles/global.css';
 import { Provider } from 'react-redux';
-import { store } from '@/store';
+import { store, persistor } from '@/store';
 import { AppConfig } from '@/utils/AppConfig';
+import { PersistGate } from 'redux-persist/integration/react';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -23,10 +24,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
     <>
       <Head>
         <title>{AppConfig.title}</title>
-        <meta
-          name="description"
-          content={AppConfig.description}
-        />
+        <meta name="description" content={AppConfig.description} />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta property="og:type" content="website" />
         <meta charSet="UTF-8" key="charset" />
@@ -34,7 +32,9 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       </Head>
       {getLayout(
         <Provider store={store}>
-          <Component {...pageProps} />
+          <PersistGate persistor={persistor} loading={null}>
+            <Component {...pageProps} />
+          </PersistGate>
         </Provider>,
       )}
       ;
