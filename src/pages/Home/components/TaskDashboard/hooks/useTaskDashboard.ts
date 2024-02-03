@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/hooks/useRTK';
 
-const useTaskIndicators = () => {
+const useTaskDashboard = () => {
   const todoList = useAppSelector(state => state.todoList);
 
   const HOURS_PER_DAY = 8
@@ -46,4 +46,4 @@ const useTaskIndicators = () => {
   };
 };
 
-export default useTaskIndicators;
+export default useTaskDashboard;

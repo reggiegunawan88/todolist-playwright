@@ -1,1 +1,1 @@
-Custom hooks for business logic that might be used in multiple places
+Custom hooks for business logic that might be used in multiple places.

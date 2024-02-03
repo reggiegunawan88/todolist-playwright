@@ -4,7 +4,7 @@ import DeleteDialog from '@/components/ModalDialog/DeleteDialog';
 import { openModalDialog } from '@/store/slices/ModalDialog';
 import dynamic from 'next/dynamic';
 
-const ModalDialog = dynamic(() => import('@/components/ModalDialog'))
+const ModalDialogWrapper = dynamic(() => import('@/components/ModalDialog'))
 
 const ToDoList = () => {
   const { isOpen } = useAppSelector(state => state.modalDialog);
@@ -22,7 +22,6 @@ const ToDoList = () => {
             <th className="border px-8 py-4">Action</th>
           </tr>
         </thead>
-
         <tbody className="text-center">
           {todoList.length ? (
             todoList.map(item => (
@@ -50,9 +49,9 @@ const ToDoList = () => {
       </table>
 
       {isOpen && (
-        <ModalDialog>
+        <ModalDialogWrapper>
           <DeleteDialog />
-        </ModalDialog>
+        </ModalDialogWrapper>
       )}
     </div>
   );

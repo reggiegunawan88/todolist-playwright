@@ -2,7 +2,6 @@
 import { combineReducers } from 'redux';
 
 /* Import slicers for each features */
-import TaskIndicatorSlice from './slices/TaskIndicator';
 import SnackbarSlice from './slices/Snackbar';
 import TodoListSlice from './slices/TodoList'
 import ModalDialogSlice from './slices/ModalDialog'
@@ -20,7 +19,6 @@ export const persistConfig = {
 
 // Combine all reducers
 const combinedReducers = combineReducers({
-  taskIndicator: TaskIndicatorSlice,
   snackbar: SnackbarSlice,
   todoList: TodoListSlice,
   modalDialog: ModalDialogSlice

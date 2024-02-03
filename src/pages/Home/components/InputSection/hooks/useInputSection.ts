@@ -1,8 +1,8 @@
+import React, { useState } from 'react';
 import { useAppDispatch } from '@/hooks/useRTK';
 import { openSnackbar, setSnackbarDescription, setSnackbarType } from '@/store/slices/Snackbar';
 import { addTodoItem } from '@/store/slices/TodoList';
 import { TodoItem } from '@/types/ui-type';
-import React, { useState } from 'react';
 import { batch } from 'react-redux';
 
 const useInputSection = () => {
@@ -13,8 +13,6 @@ const useInputSection = () => {
     title: false,
     time: false,
   });
-
-  const incrementalId = 0
 
   function onSubmit() {
     if(!validateInputValues()){
@@ -27,7 +25,7 @@ const useInputSection = () => {
 
     // Process data here after validation
     const todoItem: TodoItem = {
-      id: incrementalId + 1,
+      id: 0, // ID will be incremented through Redux reducer
       todo: {
         title: taskTitle,
         hours: Number(taskTime)
@@ -88,10 +86,12 @@ const useInputSection = () => {
       time: false,
     }));
 
+    // Empty string value, set state to empty string
     if (value === '') {
       return setTaskTime('');
     }
 
+    // Otherwise, set state equal to the value
     if (regex.test(value) && parseInt(value) <= maxValue) {
       setTaskTime(value);
     }

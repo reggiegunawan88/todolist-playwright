@@ -1,0 +1,1 @@
+This components folder contain shared component to be use on multiple places across the project.

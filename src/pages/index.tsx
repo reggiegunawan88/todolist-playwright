@@ -2,9 +2,7 @@ import { ReactNode } from 'react';
 
 import MainLayout from '@/layouts/MainLayout';
 import Home from './Home';
-import dynamic from 'next/dynamic';
-
-const Snackbar = dynamic(() => import('@/components/Snackbar'));
+import Snackbar from '@/components/Snackbar'
 
 const Index = () => {
   return (

@@ -20,7 +20,6 @@ const useDeleteDialog = () => {
   }
 
   function onDelete(){
-    console.log(currentTodoItem)
     batch(() => {
       dispatch(deleteTodoItem(currentTodoItem?.id!))
       dispatch(openSnackbar())

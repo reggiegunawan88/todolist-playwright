@@ -1,0 +1,1 @@
+This helpers folder contain reusable function that can be use on multiple places across the project.
