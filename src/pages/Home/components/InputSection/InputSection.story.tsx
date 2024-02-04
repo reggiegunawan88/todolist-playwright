@@ -1,5 +1,5 @@
 import Snackbar from '@/components/Snackbar';
-import InputSection from './../index';
+import InputSection from './index';
 
 // Default input section component
 export const InputSectionStory = () => {

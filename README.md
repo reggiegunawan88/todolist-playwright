@@ -31,6 +31,12 @@ Then, you can run locally in development mode with live reload:
 npm run dev
 ```
 
+(Optional) To run unit tests, you can run locally with:
+
+```
+npm run test
+```
+
 Open http://localhost:3000 with your favorite browser to see and enjoy the project.
 
 

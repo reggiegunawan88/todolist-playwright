@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 
 import { store } from '@/store';
-import { InputSectionStory, InputSectionWithSnackbarStory } from './InputSection.story';
+import { InputSectionStory, InputSectionWithSnackbarStory } from '../InputSection.story';
 
 describe('InputSection.tsx', () => {
   test('test render both error input text', async () => {
