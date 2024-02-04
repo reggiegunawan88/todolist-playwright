@@ -5,6 +5,7 @@ Task Management App is aimed to simplify the lives of individuals and teams by p
 ### Development
 
 Stacks:
+
 - Next JS (https://nextjs.org)
 - React JS v18 (https://react.dev/)
 - TypeScript (https://www.typescriptlang.org)
@@ -39,10 +40,25 @@ npm run test
 
 Open http://localhost:3000 with your favorite browser to see and enjoy the project.
 
+### Test Coverage
+
+#### Test files
+
+![alt text](image-3.png)
+
+#### Code coverage
+
+![alt text](image-4.png)
 
 ### VSCode information (optional)
 
 If you are VSCode users, you can have a better integration with VSCode by installing the suggested extension in `.vscode/extension.json`.
+
+### Screenshot
+
+#### Homepage
+
+![alt text](image-5.png)
 
 ### License
 
