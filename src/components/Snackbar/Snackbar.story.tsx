@@ -4,7 +4,7 @@ import { openSnackbar, setSnackbarDescription, setSnackbarType } from "@/store/s
 import { batch } from "react-redux"
 
 // Success snackbar component
-export const SuccessSnackbar = () => {
+export const SuccessSnackbarStory = () => {
   const dispatch = useAppDispatch()
 
   function openSuccessSnackbar(){
@@ -24,7 +24,7 @@ export const SuccessSnackbar = () => {
 }
 
 // Error snackbar component
-export const ErrorSnackbar = () => {
+export const ErrorSnackbarStory = () => {
   const dispatch = useAppDispatch()
 
   function openErrorSnackbar(){

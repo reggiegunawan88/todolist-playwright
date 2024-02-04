@@ -1,13 +1,10 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/useRTK';
+import ModalDialogWrapper from '@/components/ModalDialog'
 import DeleteDialog from '@/components/ModalDialog/DeleteDialog';
 import { openModalDialog } from '@/store/slices/ModalDialog';
-import dynamic from 'next/dynamic';
-
-const ModalDialogWrapper = dynamic(() => import('@/components/ModalDialog'));
 
 const ToDoList = () => {
-  const { isOpen } = useAppSelector(state => state.modalDialog);
   const todoList = useAppSelector(state => state.todoList);
   const dispatch = useAppDispatch();
 
@@ -49,11 +46,9 @@ const ToDoList = () => {
         </tbody>
       </table>
 
-      {isOpen && (
-        <ModalDialogWrapper>
-          <DeleteDialog />
-        </ModalDialogWrapper>
-      )}
+      <ModalDialogWrapper>
+        <DeleteDialog />
+      </ModalDialogWrapper>
     </div>
   );
 };

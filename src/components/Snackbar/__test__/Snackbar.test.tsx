@@ -2,13 +2,13 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import { store } from '@/store';
-import { ErrorSnackbar, SuccessSnackbar } from '../Snackbar.story';
+import { SuccessSnackbarStory, ErrorSnackbarStory } from '../Snackbar.story';
 
 describe('Snackbar.tsx', () => {
   test('test render success snackbar', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <SuccessSnackbar />
+        <SuccessSnackbarStory />
       </Provider>,
     );
 
@@ -30,7 +30,7 @@ describe('Snackbar.tsx', () => {
   test('test render error snackbar', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <ErrorSnackbar />
+        <ErrorSnackbarStory />
       </Provider>,
     );
 

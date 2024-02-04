@@ -4,13 +4,13 @@ import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 
 import { store } from '@/store';
-import { InputSectionDefault, InputSectionWithSnackbar } from './InputSection.story';
+import { InputSectionStory, InputSectionWithSnackbarStory } from './InputSection.story';
 
 describe('InputSection.tsx', () => {
   test('test render both error input text', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <InputSectionDefault />
+        <InputSectionStory />
       </Provider>,
     );
 
@@ -32,7 +32,7 @@ describe('InputSection.tsx', () => {
   test('test input for task title only', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
-        <InputSectionWithSnackbar />
+        <InputSectionWithSnackbarStory />
       </Provider>,
     );
 
@@ -63,7 +63,7 @@ describe('InputSection.tsx', () => {
   test('test input for task hours only', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
-        <InputSectionWithSnackbar />
+        <InputSectionWithSnackbarStory />
       </Provider>,
     );
 
@@ -94,7 +94,7 @@ describe('InputSection.tsx', () => {
   test('test input section success flow', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
-        <InputSectionWithSnackbar />
+        <InputSectionWithSnackbarStory />
       </Provider>,
     );
 

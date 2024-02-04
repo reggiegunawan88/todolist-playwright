@@ -1,41 +1,16 @@
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Provider } from 'react-redux';
 
 import { store } from '@/store';
-import { useAppDispatch, useAppSelector } from '@/hooks/useRTK';
-import { TodoItem } from '@/types/ui-type';
-import { addTodoItem } from '@/store/slices/TodoList';
-import ToDoList from '@/pages/Home/components/ToDoList';
-import { useEffect } from 'react';
-
-// Mocking TodoList component, DeleteDialog component is already within TodoList as child component
-const TodoListMock = () => {
-  const {} = useAppSelector(state => state.todoList);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    // Add mock data to redux store
-    const todoListMockData: TodoItem = {
-      id: 1,
-      todo: {
-        title: 'Mock Task-1',
-        hours: 20,
-      },
-    };
-
-    dispatch(addTodoItem(todoListMockData));
-  }, []);
-
-  return <ToDoList />;
-};
+import { DeleteDialogStory } from '../DeleteDialog.story';
 
 describe('DeleteDialog.tsx', () => {
   test('test render delete modal dialog and its behavior', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <TodoListMock />
+        <DeleteDialogStory />
       </Provider>,
     );
 
