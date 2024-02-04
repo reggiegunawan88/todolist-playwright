@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 /* Reducers for snackbar */
 
@@ -6,24 +6,24 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 type SnackbarType = {
   isOpen: boolean
   description: string
-  type: 'success' | 'error' 
-};
+  type: 'success' | 'error'
+}
 
 // Define the initial state
 const initialState: SnackbarType = {
   isOpen: false,
   description: '',
   type: 'success'
-};
+}
 
 export const SnackbarSlice = createSlice({
   name: 'snackbar',
   initialState,
   reducers: {
-    openSnackbar: (state) => {
+    openSnackbar: state => {
       state.isOpen = true
     },
-    closeSnackbar: (state) => {
+    closeSnackbar: state => {
       state.isOpen = false
     },
     setSnackbarDescription: (state, action: PayloadAction<string>) => {
@@ -32,9 +32,9 @@ export const SnackbarSlice = createSlice({
     setSnackbarType: (state, action: PayloadAction<'success' | 'error'>) => {
       state.type = action.payload
     }
-  },
-});
+  }
+})
 
-export const { openSnackbar, closeSnackbar, setSnackbarDescription, setSnackbarType } = SnackbarSlice.actions;
+export const { openSnackbar, closeSnackbar, setSnackbarDescription, setSnackbarType } = SnackbarSlice.actions
 
-export default SnackbarSlice.reducer;
+export default SnackbarSlice.reducer

@@ -1,13 +1,13 @@
-import { useAppDispatch } from "@/hooks/useRTK"
-import Snackbar from "./index"
-import { openSnackbar, setSnackbarDescription, setSnackbarType } from "@/store/slices/Snackbar"
-import { batch } from "react-redux"
+import { useAppDispatch } from '@/hooks/useRTK'
+import Snackbar from './index'
+import { openSnackbar, setSnackbarDescription, setSnackbarType } from '@/store/slices/Snackbar'
+import { batch } from 'react-redux'
 
 // Success snackbar component
 export const SuccessSnackbarStory = () => {
   const dispatch = useAppDispatch()
 
-  function openSuccessSnackbar(){
+  function openSuccessSnackbar() {
     batch(() => {
       dispatch(openSnackbar())
       dispatch(setSnackbarType('success'))
@@ -17,7 +17,9 @@ export const SuccessSnackbarStory = () => {
 
   return (
     <div>
-      <button aria-label="open-snackbar-button" onClick={openSuccessSnackbar}>Open Snackbar</button>
+      <button aria-label="open-snackbar-button" onClick={openSuccessSnackbar}>
+        Open Snackbar
+      </button>
       <Snackbar />
     </div>
   )
@@ -27,15 +29,17 @@ export const SuccessSnackbarStory = () => {
 export const ErrorSnackbarStory = () => {
   const dispatch = useAppDispatch()
 
-  function openErrorSnackbar(){
+  function openErrorSnackbar() {
     dispatch(openSnackbar())
     dispatch(setSnackbarType('error'))
     dispatch(setSnackbarDescription('Error Snackbar'))
   }
-  
+
   return (
     <div>
-      <button aria-label="open-snackbar-button" onClick={openErrorSnackbar}>Open Snackbar</button>
+      <button aria-label="open-snackbar-button" onClick={openErrorSnackbar}>
+        Open Snackbar
+      </button>
       <Snackbar />
     </div>
   )

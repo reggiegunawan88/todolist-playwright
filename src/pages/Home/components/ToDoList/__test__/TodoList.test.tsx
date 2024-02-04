@@ -6,7 +6,11 @@ import { store } from '@/store'
 
 describe('TodoList.tsx test scenario', () => {
   test('render TodoList table with default value', () => {
-    const { container } = render(<Provider store={store}><TodoListStory/></Provider>)
+    const { container } = render(
+      <Provider store={store}>
+        <TodoListStory />
+      </Provider>
+    )
 
     // At initial state, expect table length to be less than 2
     const todoListTable = container.querySelectorAll('tbody > tr')
@@ -15,7 +19,11 @@ describe('TodoList.tsx test scenario', () => {
 
   test('Test add and delete todo item to table', async () => {
     const copyStore = store
-    const { container, getByLabelText, queryByLabelText } = render(<Provider store={copyStore}><TodoListWithInputStory/></Provider>)
+    const { container, getByLabelText, queryByLabelText } = render(
+      <Provider store={copyStore}>
+        <TodoListWithInputStory />
+      </Provider>
+    )
 
     // 1. At initial state, expect table length to be less than 2
     // The reason is because on initial state, we only have <tr> with "You don't have any to-do item." value
@@ -29,8 +37,8 @@ describe('TodoList.tsx test scenario', () => {
     const addButton = getByLabelText('add-todo-button')
 
     // 3. Fill inputs
-    fireEvent.change(titleInput, { target: { value: 'Mock Task-1'}})
-    fireEvent.change(hoursInput, { target: { value: '2'}})
+    fireEvent.change(titleInput, { target: { value: 'Mock Task-1' } })
+    fireEvent.change(hoursInput, { target: { value: '2' } })
     fireEvent.click(addButton)
 
     await waitFor(() => {
@@ -45,28 +53,27 @@ describe('TodoList.tsx test scenario', () => {
 
     // 6. Show delete modal dialog
     await waitFor(() => {
-      const dialogTitleText = queryByLabelText('delete-modal-title') as HTMLElement;
-      expect(dialogTitleText).toBeInTheDocument();
-    });
+      const dialogTitleText = queryByLabelText('delete-modal-title') as HTMLElement
+      expect(dialogTitleText).toBeInTheDocument()
+    })
 
     // 7. Define submit delete button
-    const submitDeleteButton = getByLabelText('delete-dialog-submit-button');
-    expect(submitDeleteButton).toBeDisabled();
+    const submitDeleteButton = getByLabelText('delete-dialog-submit-button')
+    expect(submitDeleteButton).toBeDisabled()
 
     // 8. Define confirmation input on modal
-    const confirmationInput = getByLabelText('confirmation-input');
+    const confirmationInput = getByLabelText('confirmation-input')
 
-     // 9. Fill confirmation input equal to task title
-     fireEvent.change(confirmationInput, { target: { value: 'Mock Task-1' } });
-     expect(submitDeleteButton).not.toBeDisabled();
+    // 9. Fill confirmation input equal to task title
+    fireEvent.change(confirmationInput, { target: { value: 'Mock Task-1' } })
+    expect(submitDeleteButton).not.toBeDisabled()
 
-     // 9. Click on submit delete button
-    fireEvent.click(submitDeleteButton);
+    // 9. Click on submit delete button
+    fireEvent.click(submitDeleteButton)
 
     await waitFor(() => {
       // 10. Expect table tr value is equal to default state
       expect(todoListTable.length).toEqual(1)
-    });
+    })
   })
-
 })

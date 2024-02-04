@@ -1,49 +1,48 @@
-import { useEffect, useState } from 'react';
-import { useAppSelector } from '@/hooks/useRTK';
+import { useEffect, useState } from 'react'
+import { useAppSelector } from '@/hooks/useRTK'
 
 const useTaskDashboard = () => {
-  const todoList = useAppSelector(state => state.todoList);
+  const todoList = useAppSelector(state => state.todoList)
 
   const HOURS_PER_DAY = 8
-  const [totalTasks, setTotalTasks] = useState(0);
-  const [totalHours, setTotalHours] = useState(0);
-  const [totalDays, setTotalDays] = useState(0);
-
+  const [totalTasks, setTotalTasks] = useState(0)
+  const [totalHours, setTotalHours] = useState(0)
+  const [totalDays, setTotalDays] = useState(0)
 
   function calculateTotalTasks() {
-    setTotalTasks(todoList.length);
+    setTotalTasks(todoList.length)
   }
 
-  function calculateTimes() {
-    let totalHours = 0;
+  function calculateTime() {
+    let totalHours = 0
     let totalDays = 0
 
     todoList.forEach(item => {
-      totalHours += item.todo.hours;
-    });
+      totalHours += item.todo.hours
+    })
 
-    totalDays = (totalHours/HOURS_PER_DAY)
+    totalDays = totalHours / HOURS_PER_DAY
 
-    setTotalHours(totalHours);
+    setTotalHours(totalHours)
     setTotalDays(totalDays)
   }
 
-  function calculateAll(){
+  function calculateAll() {
     calculateTotalTasks()
-    calculateTimes()
+    calculateTime()
   }
 
   useEffect(() => {
-    if(todoList){
+    if (todoList) {
       calculateAll()
     }
-  }, [todoList]);
+  }, [todoList])
 
   return {
     totalTasks,
     totalHours,
-    totalDays,
-  };
-};
+    totalDays
+  }
+}
 
-export default useTaskDashboard;
+export default useTaskDashboard

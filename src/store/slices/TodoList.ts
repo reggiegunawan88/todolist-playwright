@@ -1,5 +1,5 @@
-import { TodoItem } from '@/types/ui-type';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { TodoItem } from '@/types/ui-type'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 /* Reducers for todo list */
 
@@ -12,19 +12,20 @@ export const TodoListSlice = createSlice({
   reducers: {
     addTodoItem: (state, action: PayloadAction<TodoItem>) => {
       state.push({
-        id : state.length,
+        id: state.length,
         todo: action.payload.todo
       })
     },
     deleteTodoItem: (state, targetIndex: PayloadAction<number>) => {
       const itemIdx = state.findIndex(item => item.id === targetIndex.payload)
-      if(itemIdx !== -1){
+      // Remove element from array if itemIdx is found
+      if (itemIdx !== -1) {
         state = state.splice(itemIdx, 1)
       }
-    },
-  },
-});
+    }
+  }
+})
 
-export const { addTodoItem, deleteTodoItem } = TodoListSlice.actions;
+export const { addTodoItem, deleteTodoItem } = TodoListSlice.actions
 
-export default TodoListSlice.reducer;
+export default TodoListSlice.reducer

@@ -1,14 +1,14 @@
-import { ReactNode } from 'react';
-import { useAppSelector } from '@/hooks/useRTK';
+import { ReactNode } from 'react'
+import { useAppSelector } from '@/hooks/useRTK'
 
 interface IModalDialog {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const ModalDialog = ({ children }: IModalDialog) => {
   const { isOpen } = useAppSelector(state => state.modalDialog)
 
-  if(!isOpen){
+  if (!isOpen) {
     // Render nothing
     return null
   }
@@ -20,7 +20,7 @@ const ModalDialog = ({ children }: IModalDialog) => {
         {children}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ModalDialog;
+export default ModalDialog

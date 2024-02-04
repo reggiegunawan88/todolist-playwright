@@ -1,8 +1,8 @@
-import React from 'react';
-import useInputSection from './hooks/useInputSection';
+import React from 'react'
+import useInputSection from './hooks/useInputSection'
 
 const InputSection = () => {
-  const { taskTitle, taskTime, isEmptyValue, handleInput, handleNumericInput, onSubmit } = useInputSection();
+  const { taskTitle, taskTime, isEmptyValue, handleInput, handleNumericInput, onSubmit } = useInputSection()
 
   return (
     <div className="flex flex-row gap-x-8 items-center">
@@ -53,7 +53,7 @@ const InputSection = () => {
         Add
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default InputSection;
+export default InputSection

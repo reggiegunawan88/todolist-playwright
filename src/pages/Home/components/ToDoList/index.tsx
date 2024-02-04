@@ -1,17 +1,17 @@
-import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/hooks/useRTK';
+import React from 'react'
+import { useAppDispatch, useAppSelector } from '@/hooks/useRTK'
 import ModalDialogWrapper from '@/components/ModalDialog'
-import DeleteDialog from '@/components/ModalDialog/DeleteDialog';
-import { openModalDialog } from '@/store/slices/ModalDialog';
+import DeleteDialog from '@/components/ModalDialog/DeleteDialog'
+import { openModalDialog } from '@/store/slices/ModalDialog'
 
 const ToDoList = () => {
-  const todoList = useAppSelector(state => state.todoList);
-  const dispatch = useAppDispatch();
+  const todoList = useAppSelector(state => state.todoList)
+  const dispatch = useAppDispatch()
 
   return (
     <div className="flex flex-col gap-y-3">
       <span className="text-sm font-bold">Todo List</span>
-      <table aria-label='todo-list-table' className="border-collapse">
+      <table aria-label="todo-list-table" className="border-collapse">
         <thead className="font-bold text-lg bg-gray-100">
           <tr>
             <th className="border px-8 py-4">Task Title</th>
@@ -50,7 +50,7 @@ const ToDoList = () => {
         <DeleteDialog />
       </ModalDialogWrapper>
     </div>
-  );
-};
+  )
+}
 
-export default ToDoList;
+export default ToDoList

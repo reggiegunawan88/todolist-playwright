@@ -1,38 +1,38 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import { useAppDispatch, useAppSelector } from '@/hooks/useRTK';
-import { closeSnackbar } from '@/store/slices/Snackbar';
-import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '@/hooks/useRTK'
+import { closeSnackbar } from '@/store/slices/Snackbar'
+import { useEffect } from 'react'
 
 const Snackbar = () => {
-  const { isOpen, description, type } = useAppSelector(state => state.snackbar);
-  const dispatch = useAppDispatch();
+  const { isOpen, description, type } = useAppSelector(state => state.snackbar)
+  const dispatch = useAppDispatch()
 
   function renderSnackbarBackground() {
     switch (type) {
       case 'success':
-        return '#34D399';
+        return '#34D399'
       case 'error':
-        return '#F87171';
+        return '#F87171'
       default:
-        return '';
+        return ''
     }
   }
 
   useEffect(() => {
     // Close snackbar after 2s of on every appearance
     const timeout = setTimeout(() => {
-      dispatch(closeSnackbar());
-    }, 2000);
+      dispatch(closeSnackbar())
+    }, 2000)
 
     return () => {
-      clearTimeout(timeout);
-    };
-  }, [isOpen]);
+      clearTimeout(timeout)
+    }
+  }, [isOpen])
 
   if (!isOpen) {
     // Render nothing
-    return null;
+    return null
   }
 
   return (
@@ -52,7 +52,7 @@ const Snackbar = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Snackbar;
+export default Snackbar

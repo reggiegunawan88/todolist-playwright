@@ -1,8 +1,8 @@
-import React from 'react';
-import useDeleteDialog from './hooks/useDeleteDialog';
+import React from 'react'
+import useDeleteDialog from './hooks/useDeleteDialog'
 
 const DeleteDialog = () => {
-  const { currentTodoItem, confirmationText, closeDialog, handleConfirmationTextInput, onDelete } = useDeleteDialog();
+  const { currentTodoItem, confirmationText, closeDialog, handleConfirmationTextInput, onDelete } = useDeleteDialog()
 
   return (
     <div className="mx-4 flex flex-col rounded-lg bg-white px-4 py-5 text-center gap-y-6">
@@ -43,7 +43,7 @@ const DeleteDialog = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DeleteDialog;
+export default DeleteDialog

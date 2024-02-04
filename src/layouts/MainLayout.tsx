@@ -1,13 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 
 type IMainLayoutProps = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
-const MainLayout = (props: IMainLayoutProps) => (
-  <div className="w-full flex p-3 justify-center">
-      {props.children}
-  </div>
-);
+const MainLayout = (props: IMainLayoutProps) => <div className="w-full flex p-3 justify-center">{props.children}</div>
 
-export default MainLayout;
+export default MainLayout

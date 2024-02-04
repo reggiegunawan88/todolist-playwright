@@ -2,7 +2,7 @@
 
 export interface TodoItem {
   id: number
-  todo:{
+  todo: {
     title: string
     hours: number
   }

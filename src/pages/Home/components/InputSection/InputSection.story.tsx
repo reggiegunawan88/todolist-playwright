@@ -1,10 +1,10 @@
-import Snackbar from '@/components/Snackbar';
-import InputSection from './index';
+import Snackbar from '@/components/Snackbar'
+import InputSection from './index'
 
 // Default input section component
 export const InputSectionStory = () => {
-  return <InputSection />;
-};
+  return <InputSection />
+}
 
 // Input section component with snackbar attached
 export const InputSectionWithSnackbarStory = () => {
@@ -13,5 +13,5 @@ export const InputSectionWithSnackbarStory = () => {
       <InputSection />
       <Snackbar />
     </>
-  );
-};
+  )
+}

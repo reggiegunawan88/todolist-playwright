@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-import { useAppDispatch } from '@/hooks/useRTK';
-import { openSnackbar, setSnackbarDescription, setSnackbarType } from '@/store/slices/Snackbar';
-import { addTodoItem } from '@/store/slices/TodoList';
-import { TodoItem } from '@/types/ui-type';
-import { batch } from 'react-redux';
+import React, { useState } from 'react'
+import { useAppDispatch } from '@/hooks/useRTK'
+import { openSnackbar, setSnackbarDescription, setSnackbarType } from '@/store/slices/Snackbar'
+import { addTodoItem } from '@/store/slices/TodoList'
+import { TodoItem } from '@/types/ui-type'
+import { batch } from 'react-redux'
 
 const useInputSection = () => {
-  const dispatch = useAppDispatch();
-  const [taskTitle, setTaskTitle] = useState('');
-  const [taskTime, setTaskTime] = useState<string | number>('');
+  const dispatch = useAppDispatch()
+  const [taskTitle, setTaskTitle] = useState('')
+  const [taskTime, setTaskTime] = useState<string | number>('')
   const [isEmptyValue, setIsEmptyValue] = useState({
     title: false,
-    time: false,
-  });
+    time: false
+  })
 
   function onSubmit() {
-    if(!validateInputValues()){
+    if (!validateInputValues()) {
       return batch(() => {
-        dispatch(openSnackbar());
-        dispatch(setSnackbarDescription('Please fill the input value'));
-        dispatch(setSnackbarType('error'));
-      });
+        dispatch(openSnackbar())
+        dispatch(setSnackbarDescription('Please fill the input value'))
+        dispatch(setSnackbarType('error'))
+      })
     }
 
     // Process data here after validation
@@ -30,15 +30,15 @@ const useInputSection = () => {
         title: taskTitle,
         hours: Number(taskTime)
       }
-    };
+    }
 
-    dispatch(addTodoItem(todoItem));
+    dispatch(addTodoItem(todoItem))
 
     batch(() => {
-      dispatch(openSnackbar());
-      dispatch(setSnackbarDescription('Successfully added new to-do'));
-      dispatch(setSnackbarType('success'));
-    });
+      dispatch(openSnackbar())
+      dispatch(setSnackbarDescription('Successfully added new to-do'))
+      dispatch(setSnackbarType('success'))
+    })
 
     resetStates()
   }
@@ -47,57 +47,57 @@ const useInputSection = () => {
     if (!taskTitle) {
       setIsEmptyValue(prev => ({
         ...prev,
-        title: true,
-      }));
+        title: true
+      }))
     }
     if (!taskTime) {
       setIsEmptyValue(prev => ({
         ...prev,
-        time: true,
-      }));
+        time: true
+      }))
     }
-    
-    if(!taskTitle || !taskTime) {
+
+    if (!taskTitle || !taskTime) {
       return false
     }
     return true
   }
 
   function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
-    const { value } = e.target;
+    const { value } = e.target
 
     // Remove warning text and border after re-input value
     setIsEmptyValue(prev => ({
       ...prev,
-      title: false,
-    }));
-    setTaskTitle(value);
+      title: false
+    }))
+    setTaskTitle(value)
   }
 
   // Allow numeric input only and maximum allowed value <=24
   function handleNumericInput(e: React.ChangeEvent<HTMLInputElement>) {
-    const { value } = e.target;
-    const regex = /^[0-9\b]+$/; // Regex to match only numeric characters and backspace
-    const maxValue = 24;
+    const { value } = e.target
+    const regex = /^[0-9\b]+$/ // Regex to match only numeric characters and backspace
+    const maxValue = 24
 
     // Remove warning text and border after re-input value
     setIsEmptyValue(prev => ({
       ...prev,
-      time: false,
-    }));
+      time: false
+    }))
 
     // Empty string value, set state to empty string
     if (value === '') {
-      return setTaskTime('');
+      return setTaskTime('')
     }
 
     // Otherwise, set state equal to the value
     if (regex.test(value) && parseInt(value) <= maxValue) {
-      setTaskTime(value);
+      setTaskTime(value)
     }
   }
 
-  function resetStates(){
+  function resetStates() {
     setTaskTitle('')
     setTaskTime('')
   }
@@ -110,8 +110,8 @@ const useInputSection = () => {
     setTaskTime,
     handleInput,
     handleNumericInput,
-    onSubmit,
-  };
-};
+    onSubmit
+  }
+}
 
-export default useInputSection;
+export default useInputSection

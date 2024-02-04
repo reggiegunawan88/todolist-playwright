@@ -1,6 +1,5 @@
-
-import { TodoItem } from '@/types/ui-type';
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { TodoItem } from '@/types/ui-type'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 /* Reducers for modal dialog */
 
@@ -8,13 +7,13 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 type ModalDialogType = {
   isOpen: boolean
   currentTodoItem: TodoItem | null
-};
+}
 
 // Define the initial state
 const initialState: ModalDialogType = {
   isOpen: false,
   currentTodoItem: null
-};
+}
 
 export const ModalDialogSlice = createSlice({
   name: 'modalDialog',
@@ -24,12 +23,12 @@ export const ModalDialogSlice = createSlice({
       state.isOpen = true
       state.currentTodoItem = action.payload
     },
-    closeModalDialog: (state) => {
+    closeModalDialog: state => {
       state.isOpen = false
-    },
-  },
-});
+    }
+  }
+})
 
-export const { openModalDialog, closeModalDialog } = ModalDialogSlice.actions;
+export const { openModalDialog, closeModalDialog } = ModalDialogSlice.actions
 
-export default ModalDialogSlice.reducer;
+export default ModalDialogSlice.reducer
