@@ -11,7 +11,7 @@ import { persistReducer } from 'redux-persist';
 // Configure Redux Persist
 // We just want to persist to-do list so we add it into whitelist
 export const persistConfig = {
-  key: 'root',
+  key: 'root:storage',
   version: 1,
   storage,
   whitelist: ['todoList']

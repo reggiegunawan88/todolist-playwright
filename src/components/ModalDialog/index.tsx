@@ -9,7 +9,8 @@ const ModalDialog = ({ children }: IModalDialog) => {
   const { isOpen } = useAppSelector(state => state.modalDialog)
 
   if(!isOpen){
-    return <></>
+    // Render nothing
+    return null
   }
 
   return (
