@@ -4,7 +4,7 @@ import DeleteDialog from '@/components/ModalDialog/DeleteDialog';
 import { openModalDialog } from '@/store/slices/ModalDialog';
 import dynamic from 'next/dynamic';
 
-const ModalDialogWrapper = dynamic(() => import('@/components/ModalDialog'))
+const ModalDialogWrapper = dynamic(() => import('@/components/ModalDialog'));
 
 const ToDoList = () => {
   const { isOpen } = useAppSelector(state => state.modalDialog);
@@ -30,6 +30,7 @@ const ToDoList = () => {
                 <td className="table-td-style">{item.todo.hours}</td>
                 <td className="table-td-style">
                   <button
+                    aria-label="delete-todo-button"
                     className="bg-red-400 rounded-md text-white py-1 px-4 self-end hover:bg-red-500"
                     onClick={() => dispatch(openModalDialog(item))}
                   >

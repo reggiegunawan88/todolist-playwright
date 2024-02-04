@@ -1,18 +1,16 @@
-import InputSection from '../index';
-import Snackbar from '@/components/Snackbar';
-
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { Provider } from 'react-redux';
 
 import { store } from '@/store';
+import { InputSectionDefault, InputSectionWithSnackbar } from './InputSection.story';
 
 describe('InputSection.tsx', () => {
   test('test render both error input text', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-          <InputSection />
+        <InputSectionDefault />
       </Provider>,
     );
 
@@ -34,8 +32,7 @@ describe('InputSection.tsx', () => {
   test('test input for task title only', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
-        <InputSection />
-        <Snackbar />
+        <InputSectionWithSnackbar />
       </Provider>,
     );
 
@@ -59,15 +56,14 @@ describe('InputSection.tsx', () => {
 
       // 6. Expect error snackbar to be displayed
       const snackbarErrorText = queryByText('Please fill the input value') as HTMLElement;
-      expect(snackbarErrorText).toBeInTheDocument()
+      expect(snackbarErrorText).toBeInTheDocument();
     });
   });
 
   test('test input for task hours only', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
-        <InputSection />
-        <Snackbar />
+        <InputSectionWithSnackbar />
       </Provider>,
     );
 
@@ -91,15 +87,14 @@ describe('InputSection.tsx', () => {
 
       // 6. Expect error snackbar to be displayed
       const snackbarErrorText = queryByText('Please fill the input value') as HTMLElement;
-      expect(snackbarErrorText).toBeInTheDocument()
+      expect(snackbarErrorText).toBeInTheDocument();
     });
   });
 
-  test('test successful flow', async () => {
+  test('test input section success flow', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
-        <InputSection />
-        <Snackbar/>
+        <InputSectionWithSnackbar />
       </Provider>,
     );
 
@@ -127,7 +122,7 @@ describe('InputSection.tsx', () => {
       const hoursInputErrorText = queryByLabelText('hours-input-error-text') as HTMLElement;
       expect(titleInputErrorText).not.toBeInTheDocument();
       expect(hoursInputErrorText).not.toBeInTheDocument();
-      
+
       // 7. Expect success snackbar to be displayed
       const snackbarSuccessText = queryByText('Successfully added new to-do') as HTMLElement;
       expect(snackbarSuccessText).toBeInTheDocument();

@@ -38,11 +38,12 @@ const Snackbar = () => {
       } slide fixed z-50 flex w-full justify-end p-3`}
     >
       <div
+        aria-label='snackbar-background-color'
         className="max-w-md rounded-lg"
         style={{ backgroundColor: renderSnackbarBackground() }}
       >
         <div className="flex flex-row items-center gap-x-4 px-6 py-3 text-white">
-          <span className="text-base font-bold">{description}</span>
+          <span aria-label='snackbar-description' className="text-base font-bold">{description}</span>
           <button className="relative h-4 w-4" onClick={() => dispatch(closeSnackbar())}>
             <Image
               alt="close-icon"
