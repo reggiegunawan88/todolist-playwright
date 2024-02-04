@@ -1,6 +1,5 @@
 import { WebStorage } from "redux-persist/lib/types";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-// import { Storage } from "redux-persist";
 
 const createPersistorStorage = () : WebStorage => {
   const isServerSide = typeof window === 'undefined'
