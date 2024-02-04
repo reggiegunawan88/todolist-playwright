@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from '@testing-library/react'
+import { act, fireEvent, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
@@ -74,7 +74,9 @@ describe('Snackbar.tsx', () => {
     })
 
     // 4. Fast forward time by duration
-    jest.advanceTimersByTime(duration)
+    act(() => {
+      jest.advanceTimersByTime(duration)
+    })
 
     await waitFor(() => {
       // 5. Expect snackbar no longer in the DOM
