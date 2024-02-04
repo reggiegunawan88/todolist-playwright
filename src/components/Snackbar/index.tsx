@@ -1,8 +1,8 @@
+import { useEffect } from 'react'
 import Image from 'next/image'
 
 import { useAppDispatch, useAppSelector } from '@/hooks/useRTK'
 import { closeSnackbar } from '@/store/slices/Snackbar'
-import { useEffect } from 'react'
 
 const Snackbar = () => {
   const { isOpen, description, type } = useAppSelector(state => state.snackbar)
