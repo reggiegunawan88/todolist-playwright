@@ -7,7 +7,7 @@ import { store } from '@/store';
 import { DeleteDialogStory } from '../DeleteDialog.story';
 
 describe('DeleteDialog.tsx', () => {
-  test('test render delete modal dialog and its behavior', async () => {
+  test('Test render delete modal dialog and its behavior', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
         <DeleteDialogStory />

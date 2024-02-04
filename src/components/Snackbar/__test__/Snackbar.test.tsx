@@ -5,7 +5,7 @@ import { store } from '@/store';
 import { SuccessSnackbarStory, ErrorSnackbarStory } from '../Snackbar.story';
 
 describe('Snackbar.tsx', () => {
-  test('test render success snackbar', async () => {
+  test('Test render success snackbar', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
         <SuccessSnackbarStory />
@@ -27,7 +27,7 @@ describe('Snackbar.tsx', () => {
     });
   });
 
-  test('test render error snackbar', async () => {
+  test('Test render error snackbar', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
         <ErrorSnackbarStory />

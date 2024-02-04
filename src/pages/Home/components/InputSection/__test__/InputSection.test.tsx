@@ -7,7 +7,7 @@ import { store } from '@/store';
 import { InputSectionStory, InputSectionWithSnackbarStory } from '../InputSection.story';
 
 describe('InputSection.tsx', () => {
-  test('test render both error input text', async () => {
+  test('Test render both error input text', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
         <InputSectionStory />
@@ -29,7 +29,7 @@ describe('InputSection.tsx', () => {
     });
   });
 
-  test('test input for task title only', async () => {
+  test('Test input for task title only', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
         <InputSectionWithSnackbarStory />
@@ -60,7 +60,7 @@ describe('InputSection.tsx', () => {
     });
   });
 
-  test('test input for task hours only', async () => {
+  test('Test input for task hours only', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
         <InputSectionWithSnackbarStory />
@@ -91,7 +91,7 @@ describe('InputSection.tsx', () => {
     });
   });
 
-  test('test input section success flow', async () => {
+  test('Test input section success flow', async () => {
     const { getByLabelText, queryByLabelText, queryByText } = render(
       <Provider store={store}>
         <InputSectionWithSnackbarStory />

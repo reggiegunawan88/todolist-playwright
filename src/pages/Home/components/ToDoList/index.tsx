@@ -11,7 +11,7 @@ const ToDoList = () => {
   return (
     <div className="flex flex-col gap-y-3">
       <span className="text-sm font-bold">Todo List</span>
-      <table className="border-collapse">
+      <table aria-label='todo-list-table' className="border-collapse">
         <thead className="font-bold text-lg bg-gray-100">
           <tr>
             <th className="border px-8 py-4">Task Title</th>
