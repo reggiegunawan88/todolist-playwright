@@ -44,11 +44,11 @@ Open http://localhost:3000 with your favorite browser to see and enjoy the proje
 
 #### Test files
 
-![alt text](image-3.png)
+![alt text](./public/assets/screenshots/unit-test.png)
 
 #### Code coverage
 
-![alt text](image-4.png)
+![alt text](./public/assets/screenshots/unit-test-coverage.png)
 
 ### VSCode information (optional)
 
@@ -58,7 +58,7 @@ If you are VSCode users, you can have a better integration with VSCode by instal
 
 #### Homepage
 
-![alt text](image-5.png)
+![alt text](./public/assets/screenshots/homepage.png)
 
 ### License
 
