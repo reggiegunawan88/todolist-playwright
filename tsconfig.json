@@ -42,5 +42,5 @@
     }
   },
   "exclude": ["./out/**/*", "./node_modules/**/*"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js", "jest.config.js", "src/**/*.test.tsx"]
 }
