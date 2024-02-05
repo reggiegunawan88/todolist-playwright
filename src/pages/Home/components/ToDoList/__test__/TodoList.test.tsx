@@ -1,6 +1,6 @@
 import { render, fireEvent, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { TodoListStory, TodoListWithInputStory } from '../TodoList.story'
+import { BasicTodoList, TodoListWithInput } from '../TodoList.stories'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
 
@@ -8,7 +8,7 @@ describe('TodoList.tsx test scenario', () => {
   test('render TodoList table with default value', () => {
     const { container } = render(
       <Provider store={store}>
-        <TodoListStory />
+        <BasicTodoList />
       </Provider>
     )
 
@@ -21,7 +21,7 @@ describe('TodoList.tsx test scenario', () => {
     const copyStore = store
     const { container, getByLabelText, queryByLabelText } = render(
       <Provider store={copyStore}>
-        <TodoListWithInputStory />
+        <TodoListWithInput />
       </Provider>
     )
 

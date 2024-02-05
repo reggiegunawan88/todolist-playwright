@@ -4,13 +4,13 @@ import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
 
 import { store } from '@/store'
-import { DeleteDialogStory } from '../DeleteDialog.story'
+import { BasicDeleteDialog } from '../DeleteDialog.stories'
 
 describe('DeleteDialog.tsx', () => {
   test('Test render delete modal dialog and its behavior', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <DeleteDialogStory />
+        <BasicDeleteDialog />
       </Provider>
     )
 

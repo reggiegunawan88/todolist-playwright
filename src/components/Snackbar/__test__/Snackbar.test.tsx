@@ -2,7 +2,7 @@ import { act, fireEvent, render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Provider } from 'react-redux'
 import { store } from '@/store'
-import { SuccessSnackbarStory, ErrorSnackbarStory } from '../Snackbar.story'
+import { BasicSuccessSnackbar, BasicErrorSnackbar } from '../Snackbar.stories'
 
 // Mock setTimeout function
 jest.useFakeTimers()
@@ -11,7 +11,7 @@ describe('Snackbar.tsx', () => {
   test('Test render success snackbar', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <SuccessSnackbarStory />
+        <BasicSuccessSnackbar />
       </Provider>
     )
 
@@ -33,7 +33,7 @@ describe('Snackbar.tsx', () => {
   test('Test render error snackbar', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <ErrorSnackbarStory />
+        <BasicErrorSnackbar />
       </Provider>
     )
 
@@ -55,7 +55,7 @@ describe('Snackbar.tsx', () => {
   test('Test hide snackbar after specified duration', async () => {
     const { getByLabelText, queryByLabelText } = render(
       <Provider store={store}>
-        <ErrorSnackbarStory />
+        <BasicErrorSnackbar />
       </Provider>
     )
 
