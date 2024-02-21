@@ -49,7 +49,7 @@ const ToDoList = () => {
             <th className="border px-8 py-4">Action</th>
           </tr>
         </thead>
-        <tbody className="text-center">{renderTodoList(todoList)}</tbody>
+        <tbody className="text-center" aria-label='table-tbody'>{renderTodoList(todoList)}</tbody>
       </table>
 
       <ModalDialogWrapper>

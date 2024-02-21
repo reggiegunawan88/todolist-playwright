@@ -7,7 +7,7 @@ const Home = () => {
     <div className="flex flex-col gap-y-5">
       <div className="flex flex-col">
         <span className="text-2xl font-bold">Task Management App</span>
-        <span className="text-xs">By Reggie Gunawan</span>
+        <span className="text-xs" aria-label='author-name'>By Reggie Gunawan</span>
       </div>
       <div className="flex flex-col gap-y-20">
         <TaskDashboard />

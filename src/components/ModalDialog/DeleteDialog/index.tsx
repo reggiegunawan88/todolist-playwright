@@ -5,9 +5,9 @@ const DeleteDialog = () => {
   const { currentTodoItem, confirmationText, closeDialog, handleConfirmationTextInput, onDelete } = useDeleteDialog()
 
   return (
-    <div className="mx-4 flex flex-col rounded-lg bg-white px-4 py-5 text-center gap-y-6">
+    <div aria-label='delete-modal-dialog' className="mx-4 flex flex-col rounded-lg bg-white px-4 py-5 text-center gap-y-6">
       <span aria-label="delete-modal-title" className="text-lg">
-        Are you sure you want to delete <strong>{currentTodoItem?.todo.title}</strong>?
+        Are you sure you want to delete <strong aria-label='delete-dialog-task-title'>{currentTodoItem?.todo.title}</strong>?
       </span>
       <div className="flex flex-col text-center gap-y-2">
         <input

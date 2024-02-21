@@ -36,7 +36,7 @@ const Snackbar = () => {
   }
 
   return (
-    <div className="fixed z-50 flex w-full justify-end p-3">
+    <div className="fixed z-50 flex w-full justify-end p-3" aria-label='snackbar-ui'>
       <div
         aria-label="snackbar-background-color"
         className="max-w-md rounded-lg"
