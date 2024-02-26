@@ -39,12 +39,12 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     // Run browser in headless mode
-    // headless: false,
+    headless: false,
 
     // Slows down test operations by the specified amount of milliseconds
-    // launchOptions: {
-    //   slowMo: 1000,
-    // }
+    launchOptions: {
+      slowMo: 1000,
+    }
   },
 
   /* Configure projects for major browsers */
